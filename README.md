@@ -108,6 +108,26 @@ Decisions are stored against record IDs, so they stay valid as long as the
 raw exports are unchanged (check `input_manifest.csv`). If the searches are
 re-run and re-exported, the record IDs change and the review must be redone.
 
+## Inter-rater reliability sample
+
+After deduplication is final (no pairs awaiting a decision):
+
+```sh
+Rscript irr_sample.R
+```
+
+This picks 100 random publications from the deduplicated library and writes
+`output/irr_sample.csv` (a screening sheet with blank decision/note columns
+for each rater) and `output/irr_sample.ris` (to load into a screening tool).
+Whole-proceedings records are not eligible.
+
+The draw is reproducible: each record is scored with SHA-256 of
+`<seed>:<duplicate_id>` and the lowest-scoring records are chosen, which
+gives the same sample on any computer or R version. The chosen IDs are
+saved to `decisions/irr_sample_ids.csv`; commit this file. Later runs reuse
+it, so the sample stays fixed. Sample size, seed and rater names are set in
+`config.yml` under `irr_sample`. To draw a new sample, delete the IDs file.
+
 ## Reporting
 
 For the methods section: *"Records were deduplicated with a scripted R

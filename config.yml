@@ -28,3 +28,12 @@ sources:
 # When duplicates are merged, the record from the highest-priority source is
 # used as the base and empty fields are filled in from the other records.
 source_priority: [Scopus, WoS, IEEE, ACM]
+
+# Random sample for the inter-rater reliability test (irr_sample.R).
+# The seed makes the draw reproducible; the chosen IDs are saved to
+# ids_file (tracked in git) so the sample stays fixed once drawn.
+irr_sample:
+  size: 100
+  seed: 20261113
+  ids_file: "decisions/irr_sample_ids.csv"
+  raters: [rater1, rater2]

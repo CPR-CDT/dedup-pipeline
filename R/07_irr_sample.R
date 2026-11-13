@@ -1,4 +1,4 @@
-# 06_irr_sample.R -----------------------------------------------------------
+# 07_irr_sample.R -----------------------------------------------------------
 # Random sample of records for the inter-rater reliability (IRR) pilot.
 #
 # Each record gets a score = SHA-256 of "<seed>:<duplicate_id>" and the

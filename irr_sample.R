@@ -9,8 +9,8 @@
 # IDs, so the sample never changes, even if the library is rebuilt. To draw a
 # new sample, delete that file (or change the seed in config.yml) and rerun.
 
-source("R/05_report.R")
-source("R/06_irr_sample.R")
+source("R/06_report.R")
+source("R/07_irr_sample.R")
 
 config <- yaml::read_yaml("config.yml")
 irr <- config$irr_sample

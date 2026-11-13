@@ -8,8 +8,8 @@
 # data. New decisions replace earlier ones for the same pair; earlier
 # decisions not in the review file are kept.
 
-source("R/03_deduplicate.R")
-source("R/04_groups.R")
+source("R/04_deduplicate.R")
+source("R/05_groups.R")
 
 config <- yaml::read_yaml("config.yml")
 review_file <- file.path(config$output_dir, "manual_review_pairs.csv")

@@ -1,4 +1,4 @@
-# 03_deduplicate.R ----------------------------------------------------------
+# 04_deduplicate.R ----------------------------------------------------------
 # Candidate matching with ASySD (Hair et al. 2023, BMC Biology 21:189).
 #
 # ASySD (1) normalises fields (upper case, punctuation removed, DOI prefixes
@@ -11,7 +11,7 @@
 #
 # We call ASySD's matching steps directly (rather than `dedup_citations()`)
 # so that the accepted pairs are available as an edge list. Grouping and
-# merging are then done in 04_groups.R, which lets us (a) apply manual
+# merging are then done in 05_groups.R, which lets us (a) apply manual
 # decisions, including splitting a wrong automatic match, and (b) stop pairs
 # with conflicting DOIs being merged automatically: ASySD's own DOI-conflict
 # check contains `(journal|isbn > 0.9)`, which is always TRUE, so different

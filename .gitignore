@@ -1,0 +1,17 @@
+# Generated results - rebuilt by run_pipeline.R
+output/
+
+# Raw search exports are never committed (licensed content); keep them in
+# ../Search Results as set in config.yml
+*.ris
+*.bib
+*.nbib
+savedrecs*.txt
+export*.csv
+
+# R / OS clutter
+.Rhistory
+.RData
+.Rproj.user/
+*.rds
+.DS_Store

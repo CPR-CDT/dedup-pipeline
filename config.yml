@@ -1,0 +1,30 @@
+# Pipeline configuration. Paths are relative to this folder.
+
+# Raw database exports (NOT tracked in git).
+raw_dir: "../Search Results"
+
+# Generated files (NOT tracked in git; rebuilt on every run).
+output_dir: "output"
+
+# Manual decisions on uncertain pairs (tracked in git).
+decisions_file: "decisions/manual_decisions.csv"
+
+# One entry per database. `files` are glob patterns relative to raw_dir.
+# Files are read in alphabetical order so record IDs are stable between runs.
+sources:
+  - name: Scopus
+    format: ris
+    files: ["Scopes/*.ris"]
+  - name: WoS
+    format: wos
+    files: ["Web of Science/*.txt"]
+  - name: IEEE
+    format: ieee_csv
+    files: ["IEEE/*.csv"]
+  - name: ACM
+    format: acm_text
+    files: ["acm/*.txt"]
+
+# When duplicates are merged, the record from the highest-priority source is
+# used as the base and empty fields are filled in from the other records.
+source_priority: [Scopus, WoS, IEEE, ACM]
